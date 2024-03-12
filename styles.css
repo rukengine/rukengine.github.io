@@ -1,0 +1,49 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 600px;
+    margin: 50px auto;
+    text-align: center;
+}
+
+h1 {
+    color: #333;
+}
+
+.countdown {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.timer {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.timer > div {
+    text-align: center;
+}
+
+.timer > div span {
+    font-size: 30px;
+    margin: 0 10px;
+}
+
+.timer > div span:first-child {
+    display: block;
+    font-size: 18px;
+    color: #888;
+}
+
+.timer > div span:last-child {
+    display: block;
+    font-size: 14px;
+    color: #888;
+}
