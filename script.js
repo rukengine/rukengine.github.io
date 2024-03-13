@@ -1,58 +1,38 @@
-// Function to calculate the time difference between the target date and the current date
-function getTimeDifference(targetDate) {
-    const now = new Date();
-    const difference = targetDate - now;
 
-    // Calculate days, hours, minutes, and seconds
-    const days = Math.floor(difference / (1000 * 60 * 60 * 24));
-    const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
-    const seconds = Math.floor((difference % (1000 * 60)) / 1000);
+let label_Days = document.querySelector("#days");
+let label_Hours = document.querySelector("#hours");
+let label_Minutes = document.querySelector("#minutes");
+let label_Seconds = document.querySelector("#seconds");
 
-    return { days, hours, minutes, seconds };
+let targetDateTime = new Date("Apr 4, 2024 10:00:00").getTime();
+
+function updateCountdown() {
+    
+    let currentDateTime = new Date().getTime();
+    let differenceDateTime = targetDateTime - currentDateTime;
+    
+    let second = 1000;
+    let minute = second * 60;
+    let hour = minute * 60;
+    let day = hour * 24;
+    
+    let differenceDays = Math.floor(differenceDateTime / day);
+    let differenceHours = Math.floor((differenceDateTime % day) / hour);
+    let differenceMinutes = Math.floor((differenceDateTime % hour) / minute);
+    let differenceSeconds = Math.floor((differenceDateTime % minute) / second);
+
+    if(differenceDays < 10) differenceDays = "0" + differenceDays;
+    if(differenceHours < 10) differenceHours = "0" + differenceHours;
+    if(differenceMinutes < 10) differenceMinutes = "0" + differenceMinutes;
+    if(differenceSeconds < 10) differenceSeconds = "0" + differenceSeconds;
+
+    label_Days.innerHTML = differenceDays;
+    label_Hours.innerHTML = differenceHours;
+    label_Minutes.innerHTML = differenceMinutes;
+    label_Seconds.innerHTML = differenceSeconds;
+
 }
 
-// Function to update the countdown timer
-function updateCountdown(targetDate) {
-    const countdown = document.getElementById('countdown');
+setInterval(updateCountdown, 1000);
 
-    // Get the time difference
-    const { days, hours, minutes, seconds } = getTimeDifference(targetDate);
-
-    // Display the time difference
-    countdown.innerHTML = `
-        <div class="countdown-item">
-            <span class="countdown-value">${days}</span>
-            <span class="countdown-label">Days</span>
-        </div>
-        <div class="countdown-item">
-            <span class="countdown-value">${hours}</span>
-            <span class="countdown-label">Hours</span>
-        </div>
-        <div class="countdown-item">
-            <span class="countdown-value">${minutes}</span>
-            <span class="countdown-label">Minutes</span>
-        </div>
-        <div class="countdown-item">
-            <span class="countdown-value">${seconds}</span>
-            <span class="countdown-label">Seconds</span>
-        </div>
-    `;
-}
-
-// Function to start the countdown
-function startCountdown(targetDate) {
-    // Update the countdown immediately
-    updateCountdown(targetDate);
-
-    // Update the countdown every second
-    setInterval(() => {
-        updateCountdown(targetDate);
-    }, 1000);
-}
-
-// Set the target date (April 4th, 2024 at 10:00 AM)
-const targetDate = new Date('April 4, 2024 10:00:00').getTime();
-
-// Start the countdown
-startCountdown(targetDate);
+updateCountdown();

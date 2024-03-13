@@ -1,49 +1,99 @@
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f2f2f2;
-    margin: 0;
+* {
     padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Roboto Mono", monospace;
 }
 
-.container {
-    max-width: 600px;
-    margin: 50px auto;
-    text-align: center;
+header {
+    background: url("./programmingbg.jpg") no-repeat center center/cover;
+    min-height: 100vh;
+    position: relative;
+    z-index: -1;
+    overflow: hidden;
 }
 
-h1 {
-    color: #333;
+header::before {
+    position: absolute;
+    content: "";
+    background: rgba(0, 0, 0, 0.7);
+    top: 0;
+    left: 0;
+    width:  100%;
+    height: 100%;
+    z-index: -1;
 }
 
-.countdown {
+.out_side_content {
     display: flex;
+    align-items: center;
+    flex-direction: column;
     justify-content: center;
-    margin-top: 30px;
-}
-
-.timer {
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-}
-
-.timer > div {
+    height: 100vh;
+    color: #fff;
     text-align: center;
+    padding: 2rem;
 }
 
-.timer > div span {
-    font-size: 30px;
-    margin: 0 10px;
+.out_side_content h1 {
+    font-size: 6rem;
+    margin: 0 0 3rem 0;
 }
 
-.timer > div span:first-child {
+.out_side_content p {
+    font-size: 1.5rem;
+}
+
+.out_side_content h3 {
+    font-size: 3rem;
+    margin: 10rem 0 0 0;
+}
+
+.counters {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: center;
+    color: #fff;
+    text-align: center;
+    margin: 0 0 2rem 0;
+    font-size: 1.5rem;
+}
+
+.counters span {
     display: block;
-    font-size: 18px;
-    color: #888;
 }
 
-.timer > div span:last-child {
-    display: block;
-    font-size: 14px;
-    color: #888;
+.time {
+    padding: 2rem;
+}
+
+.numbers {
+    font-size: 5rem;
+    font-weight: 800;
+}
+
+@media(max-width: 720px) {
+    .out_side_content h1 {
+        font-size: 3rem;
+    }
+    .out_side_content p {
+        font-size: 1rem;
+    }
+    .out_side_content h3 {
+        font-size: 1.5rem;
+    }
+    .counters {
+        display: flex;
+        align-items: center;
+        flex-direction: row;
+        justify-content: center;
+        color: #fff;
+        text-align: center;
+        margin: 1rem 0;
+    }
+    .numbers {
+        font-size: 3.5rem;
+        font-weight: 800;
+    }
 }
