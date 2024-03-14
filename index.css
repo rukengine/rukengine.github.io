@@ -6,7 +6,7 @@
 }
 
 header {
-    background: url("./programmingbg.jpg") no-repeat center center/cover;
+    background: url("./imgs/programmingbg.jpg") no-repeat center center/cover;
     min-height: 100vh;
     position: relative;
     z-index: -1;
