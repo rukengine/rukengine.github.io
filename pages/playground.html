@@ -7,27 +7,85 @@
     <link rel="stylesheet" href="./playground.css">
 </head>
 <body>
-    <div class="main">
+    <div class="container">
         <div class="header">
             <div class="logo">
-                <span id="logo">QundiSoft</span>
+                <span id="logo">RUK-Engine</span>
             </div>
+            <div class="navbar">
+                <div class="navbar-items">
+                    <span id="home">Home</span>
+                </div>
+                <div class="navbar-items">
+                    <span id="documentation">Documentation</span>
+                </div>
+                <div class="navbar-items">
+                    <span id="about">About</span>
+                </div>
+                <div class="navbar-items">
+                    <span id="contact">Contact</span>
+                </div>
+            </div>
+        </div>
+        <div class="title">
             <div class="languages">
-                <div class="language">
-                    <span id="Riva">Riva</span>
+                <div class="label-languages">
+                    <span id="label_languages">Languages:</span>
                 </div>
-                <div class="language">
-                    <span id="algoc">algoc</span>
-                </div>
-                <div class="language">
-                    <span id="comin">Comin</span>
-                </div>
-                <div class="language">
-                    <span id="essembl">Essembl</span>
+                <div class="languages-list">
+                    <div class="language">
+                        <span id="riva">Riva</span>
+                    </div>
+                    <div class="language">
+                        <span id="algoc">Algoc</span>
+                    </div>
                 </div>
             </div>
-            
+            <div class="compiler-commands">
+                <div class="run">
+                    <span id="run-symbol">&#x23f5;</span>
+                    <span id="run">Run</span>
+                </div>
+                <div class="stop">
+                    <span id="stop-symbol">&#x23f9;</span>
+                    <span id="stop">Stop</span>
+                </div>
+            </div>
+            <div class="window-tabs">
+                <div class="terminal">
+                    <span id="terminal">Terminal</span>
+                </div>
+                <div class="console">
+                    <span id="console">Console</span>
+                </div>
+                <div class="output">
+                    <span id="output">Output</span>
+                </div>
+            </div>
+        </div>
+        <div class="main">
+            <div class="code-area" id="id-code-area">
+                <div class="line-number">
+                    <textarea id="line-numbers" type="text" disabled></textarea>
+                </div>
+                <div class="code-editor">
+                    <textarea id="code-editor" type="text" autofocus></textarea>
+                </div>
+            </div>
+            <div class="work-area">
+                <div class="terminal-window" hidden>
+                    <div id="terminal-interface"></div>
+                </div>
+                <div class="console-window">
+                    <div id="console-interface">Hello</div>
+                </div>
+                <div class="output-window" hidden>
+                    <div id="output-interface"></div>
+                </div>
+            </div>
+            </div>
         </div>
     </div>
+    <script type="text/javascript" src="./playground.js"></script>
 </body>
 </html>

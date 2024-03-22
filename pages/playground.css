@@ -1,0 +1,254 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Ysabeau+SC:wght@1..1000&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cousine:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+:root {
+	--primary-color: #001b3a;
+	--secondary-color: #001c57;
+	--teritiary-color: #00316e;
+}
+
+body {
+	overflow: hidden;
+	width: 100dvw;
+	height: 100dvh;
+	color: #fff;
+	background-color: var(--secondary-color);
+}
+
+.container {
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+	display: flex;
+	flex-direction: column;
+	background-color: var(--secondary-color);
+}
+
+.header {
+	width: 100%;
+	height: 10%;
+	overflow: hidden;
+	display: flex;
+	flex-direction: row;
+	background-color: var(--secondary-color);
+	align-items: center;
+}
+
+.title {
+	width: 100%;
+	height: 6%;
+	overflow: hidden;
+	display: flex;
+	flex-direction: row;
+	background-color: var(--teritiary-color);
+	font-family: Arial, monospace;
+}
+
+.main {
+	width: 100%;
+	height: 90%;
+	overflow: hidden;
+	display: flex;
+	flex-direction: row;
+	background-color: var(--secondary-color);
+}
+
+.logo {
+	height: 100%;
+	width: 50%;
+	display: flex;
+	align-items: center;
+	margin-left: 2%;
+	font-family: "Ysabeau SC", sans-serif;
+	font-optical-sizing: auto;
+	font-size: 36px;
+	font-style: normal;
+}
+
+.navbar {
+	height: 100%;
+	width: 50%;
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-end;
+	align-items: center;
+	margin-right: 2%;
+}
+
+.navbar-items {
+	margin-left: 3%;
+	margin-right: 3%;
+	font-family: Arial, sans-serif;
+	font-style: normal;
+}
+
+.languages {
+	height: 100%;
+	width: 33%;
+	display: flex;
+	flex-direction: row;
+}
+
+.label-languages {
+	height: 100%;
+	display: flex;
+	align-items: center;
+	margin-left: 2%;
+}
+.languages-list {
+	height: 100%;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	margin-left: 5%;
+}
+
+.language {
+	margin-left: 15%;
+	margin-right: 15%;
+}
+
+.compiler-commands {
+	height: 100%;
+	width: 34%;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+}
+
+.run {
+	background-color: #00720a;
+	padding: 10px 40px;
+	margin-right: 2%;
+	font-weight: bolder;
+	border: 0px solid black;
+	border-radius: 10px;
+}
+#run-symbol {
+	font-size: larger;
+	margin-right: 2px;
+}
+
+.stop {
+	background-color: #d40000;
+	padding: 10px 30px;
+	margin-left: 2%;
+	border: 0px solid black;
+	border-radius: 10px;
+}
+#stop-symbol {
+	font-size: larger;
+	margin-right: 2px;
+	font-weight: bolder;
+}
+
+.window-tabs {
+	height: 100%;
+	width: 33%;
+	display: flex;
+	flex-direction: row;
+}
+
+.terminal {
+	height: 100%;
+	width: 33%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.console {
+	height: 100%;
+	width: 34%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.output {
+	height: 100%;
+	width: 33%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.code-area {
+	height: 98%;
+	width: 55%;
+	display: flex;
+	flex-direction: row;
+	background-color: var(--primary-color);
+}
+
+.line-number {
+	height: 100%;
+	width: 5%;
+	display: flex;
+	padding-top: 10px;
+}
+
+.code-editor {
+	height: 100%;
+	width: 95%;
+	display: flex;
+	padding-top: 10px;
+}
+
+#line-numbers {
+	height: 100%;
+	width: 100%;
+	resize: none;
+	border: none;
+	outline: none;
+	overflow: hidden;
+	text-align: center;
+	background-color: var(--primary-color);
+	font-family: "Roboto Mono", monospace;
+	font-style: normal;
+	font-size: 16px;
+	color: #fff;
+}
+
+#code-editor {
+	height: 100%;
+	width: 100%;
+	resize: none;
+	white-space: pre;
+	color: #fff;
+	border: none;
+	outline: none;
+	background-color: var(--primary-color);
+	font-family: "Roboto Mono", monospace;
+	font-style: normal;
+	font-size: 16px;
+}
+
+.work-area {
+	height: 98%;
+	width: 45%;
+	display: flex;
+	justify-content: flex-start;
+	background-color: #000;
+}
+
+.console-window {
+	height: 100%;
+	width: 100%;
+	background-color: #000;
+	display: flex;
+	padding-top: 10px;
+}
+
+#console-interface {
+	height: 100%;
+	width: 100%;
+	background-color: #000;
+	color: #fff;
+	font-family: "Cousine", monospace;
+	font-style: normal;
+	font-size: 18px;
+}
