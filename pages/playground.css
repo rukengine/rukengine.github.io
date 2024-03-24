@@ -120,12 +120,13 @@ body {
 }
 
 .run {
-	background-color: #00720a;
-	padding: 10px 40px;
+	background-color: #00920d;
+	padding: 8px 36px;
 	margin-right: 2%;
 	font-weight: bolder;
 	border: 0px solid black;
-	border-radius: 10px;
+	border-radius: 6px;
+	cursor: pointer;
 }
 #run-symbol {
 	font-size: larger;
@@ -134,10 +135,11 @@ body {
 
 .stop {
 	background-color: #d40000;
-	padding: 10px 30px;
+	padding: 8px 28px;
 	margin-left: 2%;
 	border: 0px solid black;
-	border-radius: 10px;
+	border-radius: 6px;
+	cursor: pointer;
 }
 #stop-symbol {
 	font-size: larger;
