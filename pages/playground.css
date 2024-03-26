@@ -7,6 +7,7 @@
 	--primary-color: #001b3a;
 	--secondary-color: #001c57;
 	--teritiary-color: #00316e;
+	--selected-color: #001540;
 }
 
 body {
@@ -106,8 +107,16 @@ body {
 }
 
 .language {
-	margin-left: 15%;
-	margin-right: 15%;
+	height: 80%;
+	width: 18%;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	padding-left: 10%;
+	padding-right: 10%;
+	border: 0px solid #000;
+	border-radius: 5px;
+	cursor: pointer;
 }
 
 .compiler-commands {
@@ -152,35 +161,22 @@ body {
 	width: 33%;
 	display: flex;
 	flex-direction: row;
+	align-items: center;
+	justify-content: space-around;
 }
 
-.terminal {
-	height: 100%;
+.tabs {
+	height: 80%;
 	width: 33%;
 	display: flex;
 	justify-content: center;
 	align-items: center;
-}
-
-.console {
-	height: 100%;
-	width: 34%;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-}
-
-.output {
-	height: 100%;
-	width: 33%;
-	display: flex;
-	justify-content: center;
-	align-items: center;
+	cursor: pointer;
 }
 
 .code-area {
 	height: 98%;
-	width: 55%;
+	width: 52%;
 	display: flex;
 	flex-direction: row;
 	background-color: var(--primary-color);
@@ -231,7 +227,7 @@ body {
 
 .work-area {
 	height: 98%;
-	width: 45%;
+	width: 48%;
 	display: flex;
 	justify-content: flex-start;
 	background-color: #000;
