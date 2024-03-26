@@ -2,12 +2,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Ysabeau+SC:wght@1..1000&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Cousine:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap');
 
 :root {
 	--primary-color: #001b3a;
 	--secondary-color: #001c57;
 	--teritiary-color: #00316e;
 	--selected-color: #001540;
+	--unselected-color: #00224b;
 }
 
 body {
@@ -186,14 +189,12 @@ body {
 	height: 100%;
 	width: 5%;
 	display: flex;
-	padding-top: 10px;
 }
 
 .code-editor {
 	height: 100%;
 	width: 95%;
 	display: flex;
-	padding-top: 10px;
 }
 
 #line-numbers {
@@ -226,19 +227,22 @@ body {
 }
 
 .work-area {
-	height: 98%;
+	height: 99%;
 	width: 48%;
-	display: flex;
-	justify-content: flex-start;
 	background-color: #000;
+	display: flex;
+	padding-left: 0.5%;
+	border-left: 1px solid var(--secondary-color);
 }
 
-.console-window {
-	height: 100%;
-	width: 100%;
-	background-color: #000;
-	display: flex;
-	padding-top: 10px;
+#terminal-interface {
+	height: 0px;
+	width: 0px;
+	background-color: var(--unselected-color);
+	color: #fff;
+	font-family: "JetBrains Mono", monospace;
+	font-style: normal;
+	font-size: 18px;
 }
 
 #console-interface {
@@ -247,6 +251,16 @@ body {
 	background-color: #000;
 	color: #fff;
 	font-family: "Cousine", monospace;
+	font-style: normal;
+	font-size: 18px;
+}
+
+#output-interface {
+	height: 0px;
+	width: 0px;
+	background-color: var(--selected-color);
+	color: #fff;
+	font-family: "Source Code Pro", monospace;
 	font-style: normal;
 	font-size: 18px;
 }
