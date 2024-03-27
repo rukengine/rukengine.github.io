@@ -16,13 +16,18 @@ let divTerminal = document.querySelector('#terminal-interface')
 let divConsole = document.querySelector('#console-interface')
 let divOutput = document.querySelector('#output-interface')
 let divWorkArea = document.querySelector('.work-area')
+let divTerminalStack = document.querySelector('#terminal-stack')
+let inpTerminalInput = document.querySelector('#terminal-input')
+let divConsoleStack = document.querySelector('#console-stack')
+let inpConsoleInput = document.querySelector('#console-input')
+let divOutputSlate = document.querySelector('#output-slate')
 
 let currentLanguage = ''
 let currentWindow = ''
 
 let devtestmode = true
 let cleanmode = true
-let debugprint = true
+let debugprint = false
 
 const	primary_color = '#001b3a'
 const	secondary_color = '#001c57'
@@ -33,13 +38,23 @@ const unselected_color = '#00224b'
 body_onload()
 updateLineNumbers()
 
-function body_onload() {
+function btnRun_Clicked() {
+	if(currentLanguage != 'test') {
+		console.log('# ERROR # Please Select the Language \'Testing\'')
+		return
+	}
+	switchWindow('output')
+}
 
+function body_onload() {
 	if(cleanmode) {
 		clearCode()
+		clearTerminal()
+		clearConsole()
+		clearOutput()
 	}
 	setLanguage('riva')
-	switchWindow('console')
+	switchWindow('terminal')
 }
 
 function setLanguage(lang) {
@@ -82,6 +97,7 @@ function switchWindow(window) {
 	currentWindowDiv.style.height = '100%'
 	currentWindowDiv.style.width = '100%'
 	divWorkArea.style.backgroundColor = windowBackgroundColor(window)
+	windowFocus(window)
 	currentWindow = window
 }
 
@@ -149,6 +165,17 @@ function windowBackgroundColor(window) {
 function clearCode() {
 	txtCode.value = ""
 }
+function clearTerminal() {
+	divTerminalStack.innerHTML = '&rukengine-v1.0.0 @ ' + currentDateTime()
+	inpTerminalInput.value = '$: ' 
+}
+function clearConsole() {
+	divConsoleStack.innerHTML = ''
+	inpConsoleInput.value = ''
+}
+function clearOutput() {
+	divOutputSlate.innerHTML = ''
+}
 
 function updateLineNumbers() {
 	let lines = txtCode.value.split('\n').length
@@ -156,6 +183,22 @@ function updateLineNumbers() {
 	for(let i = 1; i < (lines + 1); i++) {
 		lblLines.value += "" + i + '\n'
 	}
+}
+
+function windowFocus(window) {
+	switch(window) {
+	case 'terminal' : terminalFocus(); return
+	case 'console' : consoleFocus(); return
+	default : return
+	}
+}
+function terminalFocus() {
+	inpTerminalInput.focus()
+	inpTerminalInput.selectionStart = inpTerminalInput.selectionEnd = inpTerminalInput.value.length
+}
+function consoleFocus() {
+	inpConsoleInput.focus()
+	inpConsoleInput.selectionStart = inpConsoleInput.selectionEnd = inpConsoleInput.value.length
 }
 
 txtCode.addEventListener('input', updateLineNumbers)
@@ -194,6 +237,7 @@ btnRun.addEventListener('mousedown', () => {
 })
 btnRun.addEventListener('mouseup', () => {
 	btnRun.style.transform = 'scale(1, 1)'
+	btnRun_Clicked()
 })
 btnStop.addEventListener('mousedown', () => {
 	btnStop.style.transform = 'scale(0.98, 0.98)'
@@ -225,6 +269,26 @@ rdConsole.addEventListener('click', () => {
 rdOutput.addEventListener('click', () => {
 	switchWindow('output')
 })
+divTerminal.addEventListener('click', () => {
+	windowFocus('terminal')
+})
+inpTerminalInput.addEventListener('keypress', function(e) {
+	if (e.key === 'Enter' || e.keyCode === 13) {
+		console.log('[Enter] key pressed in the Terminal Input')
+	}
+	if (e.key == 'Tab') {
+    e.preventDefault();
+    var start = this.selectionStart;
+    var end = this.selectionEnd;
+    this.value = this.value.substring(0, start) + "\t" + this.value.substring(end);
+    this.selectionStart = this.selectionEnd = start + 1;
+  }
+})
+
+function currentDateTime() {
+	let cur = new Date()
+	return '' + cur.getDate() + '-' + (cur.getMonth()+1) + '-' + cur.getFullYear() + ' | ' + cur.getHours() + ':' + cur.getMinutes() + ':' + cur.getSeconds()
+}
 
 function debug_print(data) {
 	if(debugprint) {
